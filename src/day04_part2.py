@@ -69,9 +69,12 @@ class Day04(BaseDay):
             for bingo_board in bingo_boards:
                 bingo_board.mark_number(drawn_number)
 
-            winning_board = next((bb for bb in bingo_boards if bb.is_winner()), None)
-            if winning_board:
-                return winning_board.sum_of_unmarked() * int(drawn_number)
+            winning_boards = [bb for bb in bingo_boards if bb.is_winner()]
+            for winning_board in winning_boards:
+                if len(bingo_boards) == 1:
+                    return winning_board.sum_of_unmarked() * int(drawn_number)
+                else:
+                    bingo_boards.remove(winning_board)
 
         return ""
 
