@@ -6,7 +6,7 @@ authors = ["Daniel Pettersson <daniel.g.pettersson@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-requests = "^2.26.0"
+colorama = "*"
 
 [tool.poetry.dev-dependencies]
 
