@@ -16,7 +16,7 @@ class BaseDay(ABC):
     def run(self):
         with self.get_input() as input_file:
             tic = perf_counter()
-            print(self.execute(input_file))
+            print(f"Answer is: {self.execute(input_file)}")
             toc = perf_counter()
             print(f"Executed in {toc - tic:0.4f} seconds")
 
