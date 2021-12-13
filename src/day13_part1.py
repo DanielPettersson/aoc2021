@@ -1,5 +1,4 @@
 from pprint import pprint
-from pprint import pprint
 from typing import TextIO, Any, Tuple, Set, List
 
 from src.common.base_day import BaseDay
