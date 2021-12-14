@@ -1,5 +1,4 @@
 from collections import Counter
-from dataclasses import dataclass
 from typing import TextIO, Any
 
 from src.common.base_day import BaseDay

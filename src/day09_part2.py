@@ -1,4 +1,4 @@
-from typing import TextIO, Any, List, Tuple, Callable, Set
+from typing import TextIO, Any, List, Tuple, Callable
 
 from colorama import Fore
 

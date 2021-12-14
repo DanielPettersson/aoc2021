@@ -29,7 +29,7 @@ class Day13(BaseDay):
         pprint(dots)
         pprint(folds)
 
-        dots = self.fold(dots,  folds[0])
+        dots = self.fold(dots, folds[0])
 
         return len(dots)
 

@@ -6,7 +6,6 @@ from src.common.base_day import BaseDay
 
 
 class Day11(BaseDay):
-
     grid: List[List[int]]
     width: int
     height: int

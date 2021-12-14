@@ -58,4 +58,3 @@ class BaseDay(ABC):
             print(f"Answer is: {self.execute(input_file)}")
             toc = perf_counter()
             print(f"Executed in {toc - tic:0.4f} seconds")
-

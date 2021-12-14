@@ -1,6 +1,6 @@
-from collections import deque
 from dataclasses import dataclass
-from typing import TextIO, Any, Optional, Dict
+from dataclasses import dataclass
+from typing import TextIO, Any, Dict
 
 from src.common.base_day import BaseDay
 
@@ -48,7 +48,6 @@ class Vector:
 
     def _is_vertical(self) -> bool:
         return self.start.x == self.end.x
-
 
     @staticmethod
     def _parse_input_str(input_str: str) -> (int, int):

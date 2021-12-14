@@ -1,6 +1,6 @@
-from collections import deque
 from dataclasses import dataclass
-from typing import TextIO, Any, Optional, Dict
+from dataclasses import dataclass
+from typing import TextIO, Any, Dict
 
 from src.common.base_day import BaseDay
 

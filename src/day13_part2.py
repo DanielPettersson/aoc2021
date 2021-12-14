@@ -26,7 +26,7 @@ class Day13(BaseDay):
             folds.append((along, int(val)))
 
         for fold in folds:
-            dots = self.fold(dots,  fold)
+            dots = self.fold(dots, fold)
 
         self.print(dots)
 

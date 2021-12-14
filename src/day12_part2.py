@@ -1,13 +1,11 @@
-from collections import deque
-from dataclasses import dataclass
 from pprint import pprint
-from typing import TextIO, Any, Optional, Set, Dict, List
+from pprint import pprint
+from typing import TextIO, Any, Set, Dict, List
 
 from src.common.base_day import BaseDay
 
 
 class Day12(BaseDay):
-
     graph: Dict[str, Set[str]] = dict()
 
     def execute(self, input_file: TextIO) -> Any:

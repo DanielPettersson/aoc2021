@@ -15,7 +15,6 @@ class BingoCell:
 
 
 class BingoBoard:
-
     rows: List[List[BingoCell]]
 
     def __init__(self, rows: List[List[str]]):

@@ -1,5 +1,5 @@
 from collections import deque
-from typing import TextIO, Any, Optional
+from typing import TextIO, Any
 
 from src.common.base_day import BaseDay
 
