@@ -8,6 +8,7 @@ authors = ["Daniel Pettersson <daniel.g.pettersson@gmail.com>"]
 python = "^3.10"
 colorama = "^0.4.4"
 requests = "^2.26.0"
+pathfinding = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 
