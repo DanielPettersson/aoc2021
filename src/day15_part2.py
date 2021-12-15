@@ -1,9 +1,9 @@
-from typing import TextIO, Any, List, Tuple, Optional
+from typing import TextIO, Any, List, Tuple
 
 from colorama import Fore
 from pathfinding.core.diagonal_movement import DiagonalMovement
 from pathfinding.core.grid import Grid
-from pathfinding.finder.a_star import AStarFinder
+from pathfinding.finder.dijkstra import DijkstraFinder
 
 from src.common.base_day import BaseDay
 
@@ -12,35 +12,25 @@ VISITS = [(0, 1), (1, 0)]
 
 class Day15(BaseDay):
 
-
     def execute(self, input_file: TextIO) -> Any:
         input_grid = [[int(c) for c in line.strip()] for line in input_file]
+        input_grid = [
+            [(c + mx + my - 1) % 9 + 1 for mx in range(5) for c in row]
+            for my in range(5) for row in input_grid
+        ]
         size = len(input_grid)
 
-        big_input_grid = []
-        for my in range(5):
-            for y in range(0, size):
-                row = []
-                for mx in range(5):
-                    for x in range(0, size):
-                        c = input_grid[y][x] + my + mx
-                        if c > 9:
-                            c -= 9
-                        row.append(c)
-                big_input_grid.append(row)
-        size = len(big_input_grid)
-
-        grid = Grid(matrix=big_input_grid)
+        grid = Grid(matrix=input_grid)
 
         start = grid.node(0, 0)
         end = grid.node(size - 1, size - 1)
 
-        finder = AStarFinder(diagonal_movement=DiagonalMovement.never)
-        path, runs = finder.find_path(start, end, grid)
+        finder = DijkstraFinder(diagonal_movement=DiagonalMovement.never)
+        path, _ = finder.find_path(start, end, grid)
 
-        self.print(big_input_grid, path)
+        self.print(input_grid, path)
 
-        return sum(big_input_grid[y][x] for x, y in path[1:])
+        return sum(input_grid[y][x] for x, y in path[1:])
 
     @staticmethod
     def print(grid: List[List[int]], path: List[Tuple[int, int]]):
